@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void StopButtonClick(View v) {
-
         timeWhenStopped = mChronometer.getBase() - SystemClock.elapsedRealtime();
         mChronometer.stop();
 
@@ -62,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void ResetButtonClick(View v) {
-
         mChronometer.setBase(SystemClock.elapsedRealtime());
         timeWhenStopped = 0;
         mChronometer.stop();
@@ -73,12 +71,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ResumeButtonClick(View v) {
-
-        /*
-        timeWhenStopped = mChronometer.getBase() - SystemClock.elapsedRealtime();
-        mChronometer.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
-        mChronometer.start();
-        */
         mChronometer.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
         mChronometer.start();
 

@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.nearbyfpv.fpv_timer.MainActivity"
-    >
+    tools:context="com.nearbyfpv.fpv_timer.MainActivity">
 
     <EditText
         android:id="@+id/EditText"
@@ -44,6 +43,11 @@
         android:layout_height="wrap_content"
         android:text="start"
         android:onClick="StartButtonClick"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="#25b900"
+        android:textColor="#ffffff"
+        android:fontFamily="sans-serif-thin"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
@@ -54,6 +58,11 @@
         android:layout_height="wrap_content"
         android:text="stop"
         android:onClick="StopButtonClick"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="#b90012"
+        android:textColor="#ffffff"
+        android:fontFamily="sans-serif-thin"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/EditText1" />
@@ -64,19 +73,30 @@
         android:layout_height="wrap_content"
         android:text="reset"
         android:onClick="ResetButtonClick"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="#0056b9"
+        android:textColor="#ffffff"
+        android:fontFamily="sans-serif-thin"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/bStop" />
 
-    <Button
-        android:id="@+id/bResume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="resume"
-        android:onClick="ResumeButtonClick"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+
+     <Button
+         android:id="@+id/bResume"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="resume"
+         android:onClick="ResumeButtonClick"
+         style="?android:attr/borderlessButtonStyle"
+         android:background="#25b900"
+         android:textColor="#ffffff"
+         android:fontFamily="sans-serif-thin"
+         android:textStyle="bold"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentStart="true"
+         android:layout_alignParentEnd="true" />
 
 
 
