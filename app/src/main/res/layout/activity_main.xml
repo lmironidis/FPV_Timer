@@ -1,107 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.nearbyfpv.fpv_timer.MainActivity">
 
-    <EditText
-        android:id="@+id/EditText"
-        android:width="192dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:layout_below="@+id/Chronometer"
-        android:layout_alignParentStart="true" />
 
-    <EditText
-        android:id="@+id/EditText1"
-        android:width="192dp"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:layout_alignBaseline="@+id/EditText"
-        android:layout_alignBottom="@+id/EditText"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/Chronometer"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="#e2e1e1"
+        android:layout_above="@+id/linearLayout" />
 
     <Chronometer
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/Chronometer"
-        android:textSize="100dp"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"/>
-
-
-
-
-    <Button
-        android:id="@+id/bStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="start"
-        android:onClick="StartButtonClick"
-        style="?android:attr/borderlessButtonStyle"
-        android:background="#25b900"
-        android:textColor="#ffffff"
+        android:layout_marginTop="12dp"
         android:fontFamily="sans-serif-thin"
-        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="100dp" />
+
+    <FrameLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:gravity="bottom"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/bStop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="stop"
-        android:onClick="StopButtonClick"
-        style="?android:attr/borderlessButtonStyle"
-        android:background="#b90012"
-        android:textColor="#ffffff"
-        android:fontFamily="sans-serif-thin"
-        android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/EditText1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-    <Button
-        android:id="@+id/bReset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="reset"
-        android:onClick="ResetButtonClick"
-        style="?android:attr/borderlessButtonStyle"
-        android:background="#0056b9"
-        android:textColor="#ffffff"
-        android:fontFamily="sans-serif-thin"
-        android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/bStop" />
+            <Button
+                android:id="@+id/bStop"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#b90012"
+                android:fontFamily="sans-serif-thin"
+                android:onClick="StopButtonClick"
+                android:text="stop"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/bReset"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#0056b9"
+                android:fontFamily="sans-serif-thin"
+                android:onClick="ResetButtonClick"
+                android:text="reset"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
 
-     <Button
-         android:id="@+id/bResume"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="resume"
-         android:onClick="ResumeButtonClick"
-         style="?android:attr/borderlessButtonStyle"
-         android:background="#25b900"
-         android:textColor="#ffffff"
-         android:fontFamily="sans-serif-thin"
-         android:textStyle="bold"
-         android:layout_alignParentBottom="true"
-         android:layout_alignParentStart="true"
-         android:layout_alignParentEnd="true" />
+        </LinearLayout>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/bResume"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#25b900"
+                android:fontFamily="sans-serif-thin"
+                android:onClick="ResumeButtonClick"
+                android:text="resume"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/bStart"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#25b900"
+                android:fontFamily="sans-serif-thin"
+                android:onClick="StartButtonClick"
+                android:text="start"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <!--
+        <Button
+            android:id="@+id/bStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"
+            android:onClick="StartButtonClick"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#25b900"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-thin"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/bStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="stop"
+            android:onClick="StopButtonClick"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#b90012"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-thin"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/bReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="reset"
+            android:onClick="ResetButtonClick"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#0056b9"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-thin"
+            android:textStyle="bold" />
 
 
 
+         <Button
+             android:id="@+id/bResume"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="resume"
+             android:onClick="ResumeButtonClick"
+             style="?android:attr/borderlessButtonStyle"
+             android:background="#25b900"
+             android:textColor="#ffffff"
+             android:fontFamily="sans-serif-thin"
+             android:textStyle="bold" />
+
+-->
 
 
 </RelativeLayout>

@@ -14,9 +14,6 @@ public class MainActivity extends AppCompatActivity {
     Button start, stop, reset, resume;
 
     private long timeWhenStopped = 0;
-    private boolean stopClicked;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,30 +30,27 @@ public class MainActivity extends AppCompatActivity {
         stop.setVisibility(View.INVISIBLE);
         reset.setVisibility(View.INVISIBLE);
         resume.setVisibility(View.INVISIBLE);
-
-
     }
+
 
     public void StartButtonClick(View v) {
         mChronometer.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
         mChronometer.start();
 
-        start.setVisibility(View.INVISIBLE);
         stop.setVisibility(View.VISIBLE);
         reset.setVisibility(View.VISIBLE);
-
-
+        start.setVisibility(View.INVISIBLE);
+        resume.setVisibility(View.INVISIBLE);
     }
 
     public void StopButtonClick(View v) {
         timeWhenStopped = mChronometer.getBase() - SystemClock.elapsedRealtime();
         mChronometer.stop();
 
-        stop.setVisibility(View.INVISIBLE);
-        reset.setVisibility(View.INVISIBLE);
+        reset.setVisibility(View.VISIBLE);
         resume.setVisibility(View.VISIBLE);
-
-
+        start.setVisibility(View.INVISIBLE);
+        stop.setVisibility(View.INVISIBLE);
     }
 
 
@@ -65,23 +59,19 @@ public class MainActivity extends AppCompatActivity {
         timeWhenStopped = 0;
         mChronometer.stop();
 
+        start.setVisibility(View.VISIBLE);
         reset.setVisibility(View.INVISIBLE);
         stop.setVisibility(View.INVISIBLE);
-        start.setVisibility(View.VISIBLE);
+        resume.setVisibility(View.INVISIBLE);
     }
 
     public void ResumeButtonClick(View v) {
         mChronometer.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
         mChronometer.start();
 
-        resume.setVisibility(View.INVISIBLE);
         reset.setVisibility(View.VISIBLE);
         stop.setVisibility(View.VISIBLE);
-
-
+        resume.setVisibility(View.INVISIBLE);
+        start.setVisibility(View.INVISIBLE);
     }
-
-
-
-
 }
